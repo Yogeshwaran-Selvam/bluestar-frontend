@@ -1,3 +1,5 @@
+import 'package:bluestar_ac_app/models/ac_model.dart';
+import 'package:bluestar_ac_app/pages/common/ac_page.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -47,6 +49,8 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (_) => const OnboardingScreen());
     case '/login':
       return MaterialPageRoute(builder: (_) => const LoginPage());
+    case '/acPage':
+      return MaterialPageRoute(builder: (_) => AcPage(acData: settings.arguments as ACModel));
     case '/contactUs':
       return MaterialPageRoute(builder: (_) => const ContactUsPage());
     case '/about':

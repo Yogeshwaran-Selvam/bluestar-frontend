@@ -1,4 +1,7 @@
+import 'package:bluestar_ac_app/services/mock_data_generator.dart';
 import 'package:flutter/material.dart';
+
+import '../widgets/ac_tile.dart';
 
 class HomePage extends StatefulWidget {
   final ValueNotifier<ThemeMode> themeNotifier;
@@ -146,16 +149,7 @@ class _HomePageState extends State<HomePage> {
                 itemBuilder: (context, index) {
                   return Column(
                     children: [
-                      ListTile(
-                        title: Text('Item ${index + 1}'),
-                        subtitle: Text('Description for item ${index + 1}'),
-                        leading: Icon(Icons.star),
-                        trailing: Icon(Icons.arrow_forward),
-                        onTap: () {
-                          // Handle item tap
-                        },
-                      ),
-                      Divider(),
+                      AcTile(acData: MockDataGenerator.generateACData()),
                       SizedBox(height: 8),
                     ],
                   );
